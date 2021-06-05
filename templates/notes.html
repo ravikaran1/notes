@@ -1,0 +1,66 @@
+{% extends 'base.html'%}
+
+{%block n-active%}
+active
+{%endblock%}
+
+{%block head%}
+<style media="screen">
+.row{
+  display: block;
+}
+.par{
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.feature{
+  margin-bottom: 40px
+}
+
+.btn{
+  margin-left: -3px;
+  font-size: 12px;
+}
+.nt{
+  margin-left: -4px;
+  font-size: 35px;
+  margin-top: -40px
+}
+.back{
+margin-top: 5px;
+margin-left: 0px;
+color: black;
+}
+.arr{
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+</style>
+
+{%endblock%}
+
+{%block body%}
+<div class=" back container">
+  <a class="arr" href="/">&lArr;</a>
+</div>
+<div class="container px-4 py-5" id="featured-3">
+   <h2 class="pb-2 nt border-bottom">Your Notes</h2>
+   <div class="row g-4 f py-3 row-cols-1 row-cols-lg-3">
+     {%for i in allnotes%}
+     <div class="feature col">
+       <h2>{{i.title}}</h2>
+       <p class="par">{{i.content|truncatechars:5}}</p>
+
+      <a href="/viewnote/{{i.sno}}" class="icon-link"><button type="button"class="btn btn-dark" name="button">View Note</button></a>
+
+
+       <a href="/delet/{{i.sno}}" class="icon-link mx-1 "><button type="button"class="btn btn-dark" name="button"> Delete</button>
+      </a>
+     </div>
+     {%endfor%}
+
+     </div>
+     </div>
+{%endblock%}

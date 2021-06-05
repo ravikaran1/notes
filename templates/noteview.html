@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{%block head%}
+<style media="screen">
+.lead {
+  font-weight: 350;
+  font-size: 22px
+}
+.btn{
+  font-size: 12px;
+}
+.back{
+margin-top: 5px;
+margin-left: 0px;
+color: black;
+}
+.arr{
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+</style>
+
+{%endblock%}
+
+{%block body%}
+<div class=" back container">
+  <a class="arr" href="/notes">&lArr;</a>
+</div>
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">{{note.title}}</h1>
+    <p class="lead">{{note.content}}</p>
+    <p class="">{{note.timest}}</p>
+    <a href="/delet/{{note.sno}}" class="icon-link "><button type="button"class="btn btn-dark" name="button"> Delete</button>
+   </a>
+  </div>
+</main>
+
+{%endblock%}
